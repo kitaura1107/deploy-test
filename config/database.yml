@@ -23,5 +23,5 @@ test:
 production:
   <<: *default
   database: deploy_test_production
-  username: your_db_user
+  username: postgres
   password: <%= ENV['DATABASE_PASSWORD'] %>
