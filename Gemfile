@@ -66,10 +66,9 @@ group :test do
   gem "selenium-webdriver"
 end
 
+# Capistrano related gems
 gem 'capistrano', '3.16.0', require: false
 gem 'capistrano-rbenv', require: false
 gem 'capistrano-rails', require: false
 gem 'capistrano-bundler', require: false
 gem 'capistrano-puma', require: false
-
-gem 'stringio'
