@@ -9,11 +9,15 @@ set :rbenv_type, :user
 set :rbenv_ruby, '3.2.4'
 set :ssh_options, { port: 2222 }
 
+set :branch, "main"
+
 set :scm, :git
 set :repository, 'git@github.com:kitaura1107/deploy-test.git'
 
-set :repo_url, 'git@github.com:kitaura1107/deploy-test.git'
+# Ensure SECRET_KEY_BASE is properly passed from the environment or .env file
+set :default_env, { 'SECRET_KEY_BASE' => ENV['SECRET_KEY_BASE'] }
 
+append :linked_files, "config/credentials.yml.enc", "config/master.key"
 append :linked_files, 'config/database.yml', 'config/secrets.yml'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system', 'public/uploads'
 
