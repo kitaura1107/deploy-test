@@ -1,3 +1,16 @@
+server '172.17.220.133', user: 'deploy', roles: %w{app db web}
+
+# DB設定
+set :db_roles, :db
+
+# Puma設定
+set :puma_bind, "unix:///var/www/deploy-test/shared/tmp/sockets/puma.sock"
+set :puma_conf, "#{shared_path}/config/puma.rb"
+
+# その他の設定
+set :nginx_sites_available_path, "/etc/nginx/sites-available"
+set :nginx_sites_enabled_path, "/etc/nginx/sites-enabled"
+
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.

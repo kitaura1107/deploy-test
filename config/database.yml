@@ -21,8 +21,10 @@ test:
   database: storage/test.sqlite3
 
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
   database: deploy_test_production
   username: deploy
+  password: '1107'
   host: localhost
 

@@ -48,9 +48,9 @@ plugin :tmp_restart
 threads 1, 16
 workers 2
 port ENV.fetch("PORT") { 3000 }
-bind "unix:///var/www/your_app/shared/tmp/sockets/puma.sock"
-stdout_redirect '/var/www/your_app/shared/log/puma.stdout.log', '/var/www/your_app/shared/log/puma.stderr.log', true
-pidfile '/var/www/your_app/shared/tmp/pids/puma.pid'
+bind "unix:///var/www/deploy-test/shared/tmp/sockets/puma.sock"  # アプリケーション名を変更
+stdout_redirect '/var/www/deploy-test/shared/log/puma.stdout.log', '/var/www/deploy-test/shared/log/puma.stderr.log', true  # アプリケーション名を変更
+pidfile '/var/www/deploy-test/shared/tmp/pids/puma.pid'  # アプリケーション名を変更
 
 on_worker_boot do
   ActiveRecord::Base.establish_connection if defined?(ActiveRecord)

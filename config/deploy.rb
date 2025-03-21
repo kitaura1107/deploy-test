@@ -1,10 +1,24 @@
 # config valid for current version and patch releases of Capistrano
-lock '3.16.0'
+lock '3.19.2'
 
 set :application, "deploy-test"
 set :repo_url, "git@github.com:kitaura1107/deploy-test.git"
 
+set :branch, "main"
+
 set :user, 'deploy'
+
+set :deploy_to, '/var/www/deploy-test'
+
+set :rbenv_type, :user
+
+set :rbenv_ruby, '3.2.4'
+
+set :rails_env, 'production' 
+
+set :keep_releases, 5
+
+set :ssh_options, { port: 2222 }
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
