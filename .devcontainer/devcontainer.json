@@ -1,0 +1,19 @@
+{
+  "name": "Ruby on Rails Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      },
+      "extensions": [
+        "rebornix.Ruby",
+        "castwide.solargraph"
+      ]
+    }
+  },
+  "forwardPorts": [3000],
+  "postCreateCommand": "bundle install"
+}
